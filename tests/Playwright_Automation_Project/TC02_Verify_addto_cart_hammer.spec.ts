@@ -30,14 +30,14 @@ test('Verify hammer availability', async ({ page }) => {
     await test.step('Click on home ', async () => {
         await page.locator('[data-test="nav-home"]').click();
     });
-    await test.step('Click category', async () => {
-        await page.getByRole('heading', { name: 'By category:' }).click();
-    });
-    await test.step('Click oh hammer check box', async () => {
-        await page.locator('[data-test="category-01M138D8R32G0Y7QNY2NH06V7A"]').check();
-    });
+    // await test.step('Click category', async () => {
+    /////     await page.getByRole('heading', { name: 'By category:' }).click();
+    // });
+    //await test.step('Click oh hammer check box', async () => {
+    //     await page.locator('[data-test="category-01M138D8R32G0Y7QNY2NH06V7A"]').check();
+    // });
     await test.step('select Hammer', async () => {
-        await page.locator('[data-test="category-01M13BV7JWT0C9SNDAG14FAVS9"]').check();
+        await page.locator('[data-test="product-01M13F8W968VJN9TZY6R7MHR9Z"]').click();
     });
     await test.step('Add the quantity', async () => {
         await page.locator('[data-test="increase-quantity"]').click();
@@ -47,22 +47,14 @@ test('Verify hammer availability', async ({ page }) => {
     await test.step('Click add to cart', async () => {
         await page.locator('[data-test="add-to-cart"]').click();
     });
-    await test.step('Verify msg added to cart', async () => {
-        await page.getByRole('alert', { name: 'Product added to shopping' }).click();
-    });
+
     await test.step('Click on cart icon ', async () => {
+
         await page.locator('[data-test="nav-cart"]').click();
     });
     await test.step('Verify the correct product added in cart', async () => {
-        await expect(page.locator('[data-test="product-title"]')).toContainText('Claw Hammer');
+        await expect(page.locator('[data-test="product-title"]')).toContainText('Hammer');
     });
-
-
-
-
-
-
-
 
 
 

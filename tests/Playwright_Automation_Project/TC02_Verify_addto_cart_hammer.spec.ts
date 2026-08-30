@@ -37,7 +37,9 @@ test('Verify hammer availability', async ({ page }) => {
     //     await page.locator('[data-test="category-01M138D8R32G0Y7QNY2NH06V7A"]').check();
     // });
     await test.step('select Hammer', async () => {
-        await page.locator('[data-test="product-01M13F8W968VJN9TZY6R7MHR9Z"]').click();
+        const element = page.locator("//*[@data-test='product-01M18QG96A5QG6CVPV88BB0NXF']");
+        await element.scrollIntoViewIfNeeded();
+        await element.click();
     });
     await test.step('Add the quantity', async () => {
         await page.locator('[data-test="increase-quantity"]').click();
